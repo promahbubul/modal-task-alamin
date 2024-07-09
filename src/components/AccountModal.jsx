@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import LeftArea from "./LeftArea";
 import RightArea from "./RightArea";
