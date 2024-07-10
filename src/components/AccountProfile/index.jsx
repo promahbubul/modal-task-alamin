@@ -40,10 +40,10 @@ const AccountProfile = () => {
             handleAccountInfo={handleAccountInfo}
             edit={displayEdit}
             setEdit={setDisplayEdit}
+            inputValue={accountInfo.displayName}
             title={accountInfo.displayName || "Add your display name"}
             label={"Display name"}
             id={"displayName"}
-            inputValue={accountInfo.displayName}
           />
           <FieldGroup
             handleAccountInfo={handleAccountInfo}

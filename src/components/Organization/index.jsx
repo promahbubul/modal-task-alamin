@@ -1,24 +1,48 @@
+import { useState } from "react";
 import FieldGroup from "../FieldGroup";
+import organizationData from "../../constant/organization.constractor";
 
 const Organization = () => {
+  const [orgData, setOrgData] = useState(organizationData);
+  const [orgNameEdit, setOrgNameEdit] = useState(false);
+  const [orgAddressEdit, setOrgAddressEdit] = useState(false);
+  const [jobTitleEdit, setJobTitleEdit] = useState(false);
+
+  const handleOrgInfo = (id, data) => {
+    orgData[id] = data;
+    setOrgData(orgData);
+  };
   return (
     <>
-      <div className=" h-[calc(100%-40.67px)]  scrollbar-hide overflow-auto">
-        <div className="flex flex-col gap-3 mt-4 overflow-auto">
+      <div className=" h-[calc(100%-40.67px)] p-4 scrollbar-hide  ">
+        <div className="flex flex-col gap-3 mt-4 = ">
           <FieldGroup
-            title={"Andrew Cano"}
+            handleAccountInfo={handleOrgInfo}
+            edit={orgNameEdit}
+            setEdit={setOrgNameEdit}
+            inputValue={organizationData.orgName}
+            title={orgData.orgName || "Andrew Cano"}
             label={"Organization name"}
-            id={"orgname"}
+            id={"orgName"}
           />
           <FieldGroup
-            title={"Add your organization address to your account"}
+            handleAccountInfo={handleOrgInfo}
+            edit={orgAddressEdit}
+            setEdit={setOrgAddressEdit}
+            title={
+              orgData.orgAddress ||
+              "Add your organization address to your account"
+            }
             label={"Organization address"}
-            id={"orgaddress"}
+            id={"orgAddress"}
           />
           <FieldGroup
-            title={"Add your job title to your account"}
+            handleAccountInfo={handleOrgInfo}
+            edit={jobTitleEdit}
+            setEdit={setJobTitleEdit}
+            title={orgData.jobTitle || "Add your job title to your account"}
             label={"Job title"}
-            id={"jobtitle"}
+            id={"jobTitle"}
           />
         </div>
       </div>
