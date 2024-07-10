@@ -54,14 +54,14 @@ const FieldGroup = ({
           </div>
           <form
             onSubmit={handleData}
-            className=" relative z-30 rounded-md bottom-0 shadow-lg bg-white border border-blue-700 p-1  gap-2 flex flex-row items-center"
+            className="relative -bottom-[6px] z-30 scale-x-110  rounded-md  shadow-lg shadow-gray/50 bg-white  p-1  gap-1 flex flex-row items-center"
           >
             <input
               onChange={(e) => setUpdateData(e.target.value)}
               type="text"
               defaultValue={inputValue}
               name={id}
-              className="border border-silver2 p-1 outline-none rounded-md w-full"
+              className="border  border-blue-700 p-1 outline-none rounded-md w-full"
               id={id}
             />
             <div className="w-7/12">
@@ -74,7 +74,7 @@ const FieldGroup = ({
               <input
                 type="submit"
                 value="Save & Next"
-                className="py-1 px-2 rounded-md  text-white ml-2 bg-blue-600 "
+                className="py-1 px-2 rounded-md  text-white ml-1 bg-blue-600 "
               />
             </div>
           </form>

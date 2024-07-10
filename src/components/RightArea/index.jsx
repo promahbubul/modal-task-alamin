@@ -5,9 +5,9 @@ import Preferences from "../Preferences";
 
 const RightArea = ({ rightSideContent, setRightSideContent }) => {
   return (
-    <div className="w-8/12 border-l border-l-silver p-4 ">
+    <div className="w-8/12 border-l border-l-silver  ">
       {/* Header */}
-      <div className="flex flex-row items-center justify-between pb-4 border-b border-b-silver">
+      <div className="flex flex-row items-center justify-between  p-4 border-b border-b-silver">
         {rightSideContent === "account" ? (
           <h2 className="">Account & Profile</h2>
         ) : rightSideContent === "organization" ? (

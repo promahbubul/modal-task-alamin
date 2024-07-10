@@ -20,7 +20,7 @@ const AccountProfile = () => {
   console.log(accountInfo);
   return (
     <>
-      <div className=" h-[calc(100%-40.67px)]  scrollbar-hide overflow-auto">
+      <div className=" h-[calc(100%-40.67px)]  scrollbar-hide overflow-auto p-4">
         {/* Avatar */}
         <div className="mt-6 flex flex-row  gap-3 items-end cursor-pointer">
           <div className="w-16 h-16 bg-blue-700 text-white flex justify-center items-center rounded-full">
@@ -35,7 +35,7 @@ const AccountProfile = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-col gap-3 mt-4 overflow-auto">
+        <div className="flex flex-col gap-3 mt-4 ">
           <FieldGroup
             handleAccountInfo={handleAccountInfo}
             edit={displayEdit}
