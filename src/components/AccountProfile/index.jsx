@@ -1,10 +1,25 @@
+import { useState } from "react";
 import { RiArrowDownSLine } from "../../assets/icons";
 import FieldGroup from "../FieldGroup";
+import accountInfoData from "../../constant/accountInfo.constant";
 
 const AccountProfile = () => {
+  const [accountInfo, setAccountInfo] = useState(accountInfoData);
+  const [displayEdit, setDisplayEdit] = useState(false);
+  const [fullNameEdit, setFullNameEdit] = useState(false);
+  const [addressEdit, setAddressEdit] = useState(false);
+  const [phoneNumberEdit, setPhoneNumberEdit] = useState(false);
+  const [emailEdit, setEmailEdit] = useState(false);
+  // const [displayEdit, setDisplayEdit] = useState(false);
+
+  const handleAccountInfo = (id, data) => {
+    accountInfo[id] = data;
+    setAccountInfo(accountInfo);
+  };
+
+  console.log(accountInfo);
   return (
     <>
-      
       <div className=" h-[calc(100%-40.67px)]  scrollbar-hide overflow-auto">
         {/* Avatar */}
         <div className="mt-6 flex flex-row  gap-3 items-end cursor-pointer">
@@ -22,29 +37,51 @@ const AccountProfile = () => {
         </div>
         <div className="flex flex-col gap-3 mt-4 overflow-auto">
           <FieldGroup
-            title={"Andrew Cano"}
+            handleAccountInfo={handleAccountInfo}
+            edit={displayEdit}
+            setEdit={setDisplayEdit}
+            title={accountInfo.displayName || "Add your display name"}
             label={"Display name"}
             id={"displayName"}
+            inputValue={accountInfo.displayName}
           />
           <FieldGroup
-            title={"Andrew Cano"}
+            handleAccountInfo={handleAccountInfo}
+            edit={fullNameEdit}
+            setEdit={setFullNameEdit}
+            title={accountInfo.fullName || "Add your Full name"}
             label={"Full name"}
-            id={"displayName"}
+            id={"fullName"}
+            inputValue={accountInfo.fullName}
           />
           <FieldGroup
-            title={"Add your address to your account"}
+            handleAccountInfo={handleAccountInfo}
+            edit={addressEdit}
+            setEdit={setAddressEdit}
+            title={accountInfo.address || "Add your address to your account"}
             label={"Address"}
-            id={"displayName"}
+            id={"address"}
+            inputValue={accountInfo.address}
           />
           <FieldGroup
-            title={"Add your phone number to your account"}
+            handleAccountInfo={handleAccountInfo}
+            edit={phoneNumberEdit}
+            setEdit={setPhoneNumberEdit}
+            title={
+              accountInfo.phoneNumber || "Add your phone number to your account"
+            }
             label={"Phone number"}
-            id={"displayName"}
+            id={"phoneNumber"}
+            inputValue={accountInfo.phoneNumber}
           />
           <FieldGroup
-            title={"Add your email to your account"}
+            handleAccountInfo={handleAccountInfo}
+            edit={emailEdit}
+            setEdit={setEmailEdit}
+            title={accountInfo.email || "Add your email to your account"}
             label={"Email"}
-            id={"displayName"}
+            id={"email"}
+            inputValue={accountInfo.email}
           />
           <div className="text-left mt-4 pb-3 border-b border-silver">
             <h2 className="text-xl font-semibold text-black">

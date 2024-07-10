@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { accountModalSideNav } from "../../constant/account-profile-modal-constant";
 
 const LeftArea = ({ setRightSideContent, rightSideContent }) => {
@@ -26,10 +27,10 @@ const LeftArea = ({ setRightSideContent, rightSideContent }) => {
           <button
             onClick={() => handleTyp(item.type)}
             className=" py-2 px-4 flex active:bg-blue-700/10 focus:bg-blue-700/10 focus:text-blue-600 flex-row group items-center gap-2 text-black  rounded-md hover:bg-blue-700/10 hover:text-blue-600 font-semibold text-base "
-            key={item.key}
+            key={item?.key}
           >
             <div className="text-gray group-hover:text-blue-600 group-focus:text-blue-600">
-              {item.icon()}
+              {item?.icon()}
             </div>
             <p className="">{item.title}</p>
           </button>
