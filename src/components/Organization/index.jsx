@@ -28,6 +28,7 @@ const Organization = () => {
           <FieldGroup
             handleAccountInfo={handleOrgInfo}
             edit={orgAddressEdit}
+            inputValue={organizationData.orgAddress}
             setEdit={setOrgAddressEdit}
             title={
               orgData.orgAddress ||
@@ -38,6 +39,7 @@ const Organization = () => {
           />
           <FieldGroup
             handleAccountInfo={handleOrgInfo}
+            inputValue={organizationData.jobTitle}
             edit={jobTitleEdit}
             setEdit={setJobTitleEdit}
             title={orgData.jobTitle || "Add your job title to your account"}
